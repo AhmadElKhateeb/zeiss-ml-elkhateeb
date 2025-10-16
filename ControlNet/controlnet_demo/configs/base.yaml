@@ -1,0 +1,39 @@
+# Minimal, readable config. All knobs in one place for reproducibility.
+run_name: mri_canny_sd15
+output_root: runs
+
+seed: 1
+num_samples: 1
+image_resolution: 512
+
+# DDIM / guidance
+sampler:
+  ddim_steps: 10
+  scale: 9.0
+  eta: 0.0
+  guess_mode: false
+  strength: 1.0
+
+
+# Prompts
+prompt:
+  positive: "mri brain scan"
+  positive_suffix: "good quality" # appended to positive
+  negative: "animal, drawing, painting, vivid colors, longbody, lowres, bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality"
+
+
+# Conditioning (Canny)
+conditioning:
+  type: canny
+  canny:
+    low_threshold: 50
+    high_threshold: 100
+
+
+# Model
+model:
+  type: controlnet_sd15_canny
+  controlnet:
+    config_path: ./models/cldm_v15.yaml
+    weights_path: ./models/control_sd15_canny.pth
+    device: cuda
