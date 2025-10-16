@@ -90,7 +90,7 @@ runs/YYYYMMDD_HHMMSS_mri_canny_sd15/
 
 Below is an example of a generated synthetic MRI scan conditioned on Canny edges:
 
-![image info](zeiss-ml-elkhateeb/controlnet_demo/runs/20251016_164937_mri_canny_sd15/outputs/result.png)
+![image info](runs/20251016_164937_mri_canny_sd15/outputs/result.png)
 
 ## 🔁 Reproducibility
 
